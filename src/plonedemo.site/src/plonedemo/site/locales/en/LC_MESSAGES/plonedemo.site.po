@@ -87,7 +87,7 @@ msgid "This is a demo-site where you can test Plone ${plone_version}. The site w
 msgstr ""
 
 #: plonedemo/site/browser/templates/frontpage_viewlet.pt:22
-msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/collective/demo.plone.de/issues\">submit a issue</a> on github."
+msgid "This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href=\"https://github.com/starzel/demo.starzel.de/issues\">submit a issue</a> on github."
 msgstr ""
 
 #: plonedemo/site/configure.zcml:31

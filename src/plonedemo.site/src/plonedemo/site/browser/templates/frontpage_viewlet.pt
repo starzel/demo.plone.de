@@ -17,9 +17,9 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-4">
                     <h3 i18n:translate="">About this site</h3>
-                    <p i18n:translate="">This is a demo-site where you can test Plone <span tal:replace="view/get_plone_version" i18n:name="plone_version"></span>.
+                    <p i18n:translate="">This is a demo-site where you can test Plone <span tal:replace="view/get_plone_version" i18n:name="plone_version"></span> along with some addons.
                     The site will be reset every 4 hours.</p>
-                    <p i18n:translate="">This site is provided by the Plone Community. If you have suggestions or encounter problems please <a href="https://github.com/collective/demo.plone.de/issues">submit a issue</a> on github.</p>
+                    <p i18n:translate="">This site is provided by <a href="https://www.starzel.de">Starzel.de</a>. If you have suggestions or encounter problems please <a href="https://github.com/starzel/demo.starzel.de/issues">submit a issue</a> on github.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6  col-md-4">
                     <h3 i18n:translate="">Want to know more?</h3>
@@ -35,15 +35,6 @@
                     <p class="for_anonymous"><a class="context pat-plone-modal" href="${navigation_root_url}/login" data-pat-plone-modal='{"prependContent": ".portalMessage", "title": "Log in", "width": "26em"}' i18n:translate="">Log in now!</a></p>
 
                     <p class="for_autheticated"><a class="context" href="${navigation_root_url}/logout" i18n:translate="">Log out</a></p>
-
-                    <dl>
-                        <dt i18n:translate="">Manager</dt>
-                        <dd i18n:translate="description_manager">Manage content, users, addons and settings.</dd>
-                        <dt i18n:translate="">Editor-in-chief</dt>
-                        <dd i18n:translate="description_editor_in_chief">Create, edit and publish content.</dd>
-                        <dt i18n:translate="">Editor</dt>
-                        <dd i18n:translate="description_editor">Create, edit and submit content.</dd>
-                    </dl>
                 </div>
             </div>
         </div>

@@ -16,12 +16,12 @@ def demo_host(branch='master'):
     """
     Host serving our Plone demo
     """
-    env.hosts = ['demo.plone.de']
+    env.hosts = ['demo.starzel.de']
     env.port = '30363'
     env.deploy_user = 'zope'
     env.branch = branch
     env.homedir = '/home/%s/' % env.deploy_user
-    env.directory = '/home/%s/demo.plone.de/' % env.deploy_user
+    env.directory = '/home/%s/demo.starzel.de/' % env.deploy_user
 
 
 def stop():
@@ -58,7 +58,7 @@ def setup():
     with cd(env.homedir):
 
         # clone repository from github
-        sudo('git clone https://github.com/collective/demo.plone.de.git', user=env.deploy_user)  # noqa: E501
+        sudo('git clone https://github.com/starzel/demo.starzel.de.git', user=env.deploy_user)  # noqa: E501
 
     with cd(env.directory):
 
@@ -115,5 +115,5 @@ def update():
             sudo('./bin/zeoclient_debug adduser admin admin', user=env.deploy_user)  # noqa: E501
 
         # load page twice to fill cache and prevent a bug showing raw html
-        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
-        sudo('/usr/bin/wget -S -qO- demo.plone.de > /tmp/demo.plone.de.html', user=env.deploy_user)  # noqa: E501
+        sudo('/usr/bin/wget -S -qO- demo.starzel.de > /tmp/demo.starzel.de.html', user=env.deploy_user)  # noqa: E501
+        sudo('/usr/bin/wget -S -qO- demo.starzel.de > /tmp/demo.starzel.de.html', user=env.deploy_user)  # noqa: E501

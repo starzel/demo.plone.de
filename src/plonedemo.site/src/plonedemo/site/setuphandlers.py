@@ -17,7 +17,7 @@ import os
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_EMAIL = 'demo@plone.de'
+DEFAULT_EMAIL = 'info@starzel.de'
 FRONTPAGE_TITLE = _(u'Welcome to Plone 5.1')
 FRONTPAGE_DESCRIPTION = _('The ultimate Open Source Enterprise CMS')
 IMPORTED_FOLDER_ID = 'demo'
@@ -189,6 +189,7 @@ def create_frontpage(portal, container, target_language):
         front_text = bodyfinder(frontpage_raw).strip()
 
     frontpage.text = RichTextValue(front_text, 'text/html', 'text/x-html-safe')
+    frontpage.setLayout('layout_view')
     return frontpage
 
 

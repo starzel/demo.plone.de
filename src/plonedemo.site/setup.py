@@ -46,6 +46,9 @@ setup(
         'plone.api',
         'setuptools',
         'z3c.jbot',
+        'plone.app.mosaic',
+        'collective.easyform',
+        'plone.restapi',
     ],
     extras_require={
         'test': [
