@@ -38,16 +38,16 @@
 
   <record name="plone.displayed_types">
     <value>
-      <element>en</element>
-      <element>de</element>
+      <element>EasyForm</element>
+      <element>Collection</element>
     </value>
   </record>
 
   <record interface="plone.app.multilingual.interfaces.IMultiLanguageExtraOptionsSchema"
           name="plone.available_languages">
     <value purge="False">
-      <element>EasyForm</element>
-      <element>Collection</element>
+      <element>en</element>
+      <element>de</element>
     </value>
   </record>
 
