@@ -37,7 +37,7 @@
   </record>
 
   <record name="plone.displayed_types">
-    <value>
+    <value purge="False">
       <element>EasyForm</element>
       <element>Collection</element>
     </value>
@@ -45,7 +45,7 @@
 
   <record interface="plone.app.multilingual.interfaces.IMultiLanguageExtraOptionsSchema"
           name="plone.available_languages">
-    <value purge="False">
+    <value>
       <element>en</element>
       <element>de</element>
     </value>
