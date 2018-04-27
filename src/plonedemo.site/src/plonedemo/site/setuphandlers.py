@@ -4,6 +4,7 @@ from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFPlone.interfaces import ILanguage
 from Products.CMFPlone.utils import bodyfinder
 from plone import api
+from plone.app.blocks.layoutbehavior import ILayoutAware
 from plone.app.multilingual.browser.setup import SetupMultilingualSite
 from plone.app.multilingual.interfaces import ITranslationManager
 from plone.app.textfield.value import RichTextValue
@@ -100,6 +101,7 @@ def post_install(setup):
                     translated.append(obj2_id)
                     break
     # setup_wpd(portal)
+    setup_mosaic()
 
 
 def uninstall(setup):
@@ -189,7 +191,6 @@ def create_frontpage(portal, container, target_language):
         front_text = bodyfinder(frontpage_raw).strip()
 
     frontpage.text = RichTextValue(front_text, 'text/html', 'text/x-html-safe')
-    frontpage.setLayout('layout_view')
     return frontpage
 
 
@@ -247,3 +248,18 @@ def link_translations(obj, translation, language):
 #     qi.installProduct('wpd.countdown')
 #     api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_date', date(year=2017, month=4, day=28))  # noqa
 #     api.portal.set_registry_record('wpd.countdown.browser.views.IWPDSchema.wpd_url', 'http://plone.de/world-plone-day/')  # noqa
+
+def setup_mosaic():
+    mosaic_types = [
+        'Document',
+    ]
+    for brain in api.content.find(portal_type=mosaic_types):
+        obj = brain.getObject()
+        # enable mosaic
+        obj.setLayout('layout_view')
+        # select mosaic layout
+        wrapped = ILayoutAware(obj)
+        if obj.portal_type == 'Document':
+            wrapped.contentLayout = '++contentlayout++default/document.html'
+        else:
+            wrapped.contentLayout = '++contentlayout++default/basic.html'
