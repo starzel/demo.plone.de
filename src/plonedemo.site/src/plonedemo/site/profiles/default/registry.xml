@@ -36,7 +36,7 @@
     <value>False</value>
   </record>
 
-  <record name="plone displayed_types">
+  <record name="plone.displayed_types">
     <value>
       <element>en</element>
       <element>de</element>
